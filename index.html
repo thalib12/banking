@@ -14,7 +14,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Road+Rage&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <style>
-            .btn-shine {
+           
+           h1{
+            animation-fill-mode: forwards;
+  font-family: 'Zen Antique Soft', serif;
+  font-weight: 500;
+  font-size: 45px;
+  color: white;
+  text-align: center;
+           }
+           input{
+  width: 80%;height:46px;margin-top: 20px;background: none;color: white;
+  margin-left:-9px;
+  border: none;
+  text-align: center;
+  border-bottom: white 2px solid;
+}
+           .btn-shine {
   
   color: #fff;
   background: linear-gradient(to right, #4d4d4d 0, #fff 10%, #4d4d4d 20%);
@@ -25,9 +41,10 @@
   animation-fill-mode: forwards;
   font-family: 'Zen Antique Soft', serif;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 40px;
   text-decoration: none;
   white-space: nowrap;
+  margin-left: 30%;
   
   
 }
@@ -36,43 +53,22 @@
     background-position: 0;
   }
   60% {
-    background-position: 320px;
+    background-position: 500px;
   }
   100% {
-    background-position: 320px;
+    background-position: 500px;
   }
 }
-/* @-webkit-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  }
-} */
-/* @-o-keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 180px;
-  }
-  100% {
-    background-position: 180px;
-  } */
-/* } */
+
 @keyframes shine {
   0% {
     background-position: 0;
   }
   60% {
-    background-position: 300px;
+    background-position: 480px;
   }
   100% {
-    background-position: 300px;
+    background-position: 480px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -81,19 +77,47 @@
   .col-4{
     width: 85%;
     margin-left: 0%;
+    margin-top: 5%;
     
   }
   .btn-shine{
-    font-size:23px;
-    margin-left: -30px;
+   display: none;
   }
   .btn-info{
     margin-top: 10px;
     margin-left: 60%;
     width: 30%;
   }
+  input{
+    height: 42px;
+  }
 }
+
+.input-item{
+  background-color: white;
+  color:black;
+   border: 2px solid white;
+   
+   border-radius: 5px;
+   padding:3% 3%
+   
+
+}
+.input-item2{
+  background-color: white;
+  color:black;
+   border: 2px solid white;
+   
+   border-radius: 5px;
+   padding:3% 3%
+   
+
+}
+
+  
+
         </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -101,23 +125,27 @@
     <!-- <div style="background-image: url(./bg.jpg);height:800px;"> -->
     <!-- <div class="container">
     </div> -->
+    <a href="" class="btn-shine " target="_blank">ONLINE BANKING SERVICE</a>
     <div class="container">
       <div class="row">
           <div class="col-4"></div>
           <div class="col-4">
           <div style="height: 350px;
-      ;border: 1px solid white ; margin-top: 50%;border-radius: 20px;width: 120%;">
+      ;border: 1px solid white ; margin-top: 20%;border-radius: 20px;width: 120%;">
+       <h1 >Login</h1>
               <form action="./registration.html">
                   <div style="margin-left: 10%;">
-                      <div style="margin-top: 5%;"><a href="" class="btn-shine " target="_blank">ONLINE BANKING SERVICE</a></div>
-                      
+                   
                      
+                      
+                    <span class="input-item"> <i class="fa fa-user"></i></span>
                       <input type="text" placeholder="Enter Account number"
-                          style="width: 90%;height:40px;margin-top: 20px;" id="log_accno"><br>
+                          id="log_accno"><br>
+                          <span class="input-item2"><i class="fa fa-key"></i></span>
                       <input type="password" placeholder="Enter password"
-                          style="width: 90%;height:40px;margin-top: 20px;margin-bottom: 20px;" id="log_pass"><br>
-                      <button type="button" class="btn btn-success" style="width: 90%;"
-                          onclick="">Login</button>
+                         id="log_pass"><br>
+                      <button type="button" class="btn btn-success" style="width: 90%;margin-top: 10%;"
+                          onclick="bank.authenticate()">Login</button>
   
   
                   </div>
