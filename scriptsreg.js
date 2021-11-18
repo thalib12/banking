@@ -37,7 +37,7 @@ class Bank {
             if (pwd == data.password) {
                 sessionStorage.setItem("user", acno)
                 alert("Login Successfully");
-            
+                document.querySelector("#alert").innerHTML=""
                     location.href = "./homepage.html"
                 
 
@@ -46,12 +46,12 @@ class Bank {
 
             }
             else {
-                swal("Incorrect password", "Check your password and try again", "error");
+                document.querySelector("#alert").innerHTML="Incorrect Password!"
             }
         }
         else {
 
-            swal("invalid account number", "Check your Account Number and try again", "error")
+            document.querySelector("#alert").innerHTML="Invalid Account Number!"
         }
 
     }
@@ -86,7 +86,9 @@ class Bank {
     fundTransfer() {
         let accno1 = acc1.value
         let accno2 = acc2.value
+       
         let amount = parseInt(amt.value)
+    
         let bal = parseInt(this.balanceEnquiry())
         if (accno1 == accno2) {
             if (this.validateAccount(accno1)) {
@@ -108,25 +110,27 @@ class Bank {
                     newbal["transaction"].push({"From":fromacc,"Amount":amount})
                     localStorage.setItem(accno1, JSON.stringify(newbal))
                     
-                    // console.log(transaction);
+                
                     localStorage.setItem(fromacc, JSON.stringify(fromnewbal))
                     localStorage.setItem(accno1,JSON.stringify(newbal))
                     
                     
                     
                     alert("Transaction successful")
+                  
+                    document.querySelector("#model").innerHTML=""
                 }
                 else {
-                    alert("insufficient balance")
+                    document.querySelector("#model").innerHTML="Insufficient Balance"
                 }
 
             }
             else {
-                alert("invalid account number")
+                document.querySelector("#model").innerHTML="Invalid Account Number"
             }
         }
         else {
-            alert("Account numbers mismatch")
+            document.querySelector("#model").innerHTML="Account Number Mismatch"
         }
     }
     paymentHistory() {

@@ -135,7 +135,7 @@ margin-left: 40%;
                 <a class="nav-link active" aria-current="page" href="#" onclick="bank.getBalance()">Balance Enquiry</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="bank.fundTransfer()">
+                <a class="nav-link active" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Fund Transfer
                 </a>
                 
@@ -152,10 +152,14 @@ margin-left: 40%;
                         <input type="text" placeholder="Enter account number:" class="form-control" id="acc1">
                         <input type="text" placeholder="Re-enter account number:" class="form-control" id="acc2">
                         <input type="text" placeholder="Amount:" class="form-control" id="amt">
+                        <div style="height: 10px;"><p id="model" style="text-align: center;color: red; font-family: 'Zen Antique Soft', serif;
+                          font-weight: 300;"></p></div>
                       </div>
+                      
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary" onclick="bank.fundTransfer()">Transfer Amount</button>
+                        <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                       
                       </div>
                     </div>
                   </div>
